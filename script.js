@@ -1,13 +1,38 @@
 let firstNumber;
-let secondNumber;
+      let secondNumber;
 
-firstNumber = prompt("Enter your first number");
-secondNumber = prompt("Enter your second number");
+      firstNumber = prompt('Ведіть першу цифру');
+      secondNumber = prompt('Ведіть другу цифру');
 
-alert(Number(firstNumber) + Number(secondNumber));
+      if (firstNumber && secondNumber) {
+        firstNumber = Number(firstNumber);
+        secondNumber = Number(secondNumber);
 
-alert(firstNumber - secondNumber)
 
-alert(firstNumber * secondNumber)
+        let isFirstNumberLessThanSecondNumber = firstNumber < secondNumber;
 
-alert(firstNumber / secondNumber)
+        if (isFirstNumberLessThanSecondNumber) {
+          let userAnswer = confirm('Ви впевнені?');
+
+          if (userAnswer === true) {
+            alert(firstNumber - secondNumber);
+          }
+        } else {
+            alert(firstNumber - secondNumber);
+        }
+
+        let isSecondNumberZero = secondNumber === 0;
+
+        if (isSecondNumberZero) {
+            alert('Ділення не виконано, друге число є 0');
+        } else {
+            alert(firstNumber / secondNumber);
+        }
+
+        alert(firstNumber + secondNumber);
+
+        alert(firstNumber * secondNumber);
+      } else {
+        alert('Користувач відмовився вводити цифри');
+      }
+
